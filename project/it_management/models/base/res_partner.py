@@ -4,8 +4,13 @@
 #    Copyright 2009-2017 4Leaf Team
 #
 ##############################################################################
-import access
-import base
-import issue
-import sms
-import network
+
+from odoo import fields, models
+
+
+class ResPartner(models.Model):
+    _inherit = "res.partner"
+
+    supporter_id = fields.Many2one(
+        string="Supporter",
+        comodel_name="res.users")

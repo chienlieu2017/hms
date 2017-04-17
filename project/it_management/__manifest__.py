@@ -28,6 +28,7 @@ IT Management Module
         # 'data/',
         'data/email_template_data.xml',
         'data/product_category_data.xml',
+        'data/ir_cron_data.xml',
         'data/res_company_data.xml',
         'data/ir_config_parameter_data.xml',
         'data/ir_sequence_data.xml',
@@ -42,10 +43,15 @@ IT Management Module
         # VIEWS
         # ============================================================
         # 'view/',
+        'view/access/access_system_view.xml',
+        'view/access/internet_provider_view.xml',
+        'view/access/web_service_view.xml',
+        'view/base/res_partner_view.xml',
         'view/issue/issue_config_settings_views.xml',
         'view/issue/issue_report_view.xml',
         'view/sms/sms_sms_view.xml',
         'view/sms/sms_template_view.xml',
+        'view/network/network_map_view.xml',
         # ============================================================
         # MENU
         # ============================================================
