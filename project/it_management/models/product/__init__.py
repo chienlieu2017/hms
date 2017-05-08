@@ -5,3 +5,4 @@
 #
 ##############################################################################
 import product_template
+import product_category

@@ -14,7 +14,10 @@ IT Management Module
     'author': '4Leaf Team',
     'website': '',
     'depends': [
-        'mrp', 'document',
+        'mrp',
+        'document',
+        'report_xlsx',
+        '4leaf_base'
     ],
     'data': [
         # ============================================================
@@ -22,6 +25,8 @@ IT Management Module
         # ============================================================
         # 'security/',
         'security/res_groups_data.xml',
+        'security/ir.model.access.csv',
+        'security/ir_rule_data.xml',
         # ============================================================
         # DATA
         # ============================================================
@@ -39,6 +44,7 @@ IT Management Module
         # REPORT
         # ============================================================
         # 'report/',
+        'report/monthly_issue_report_xlsx.xml',
         # ============================================================
         # VIEWS
         # ============================================================
@@ -51,11 +57,13 @@ IT Management Module
         'view/base/res_partner_view.xml',
         'view/issue/issue_config_settings_views.xml',
         'view/issue/issue_report_view.xml',
+        'view/issue/month_report_issue_view.xml',
         'view/sms/sms_sms_view.xml',
         'view/sms/sms_template_view.xml',
         'view/network/network_map_view.xml',
         'view/contract/partner_contract_view.xml',
         'view/product/product_template_view.xml',
+        'view/product/product_category_view.xml',
         # ============================================================
         # MENU
         # ============================================================
