@@ -8,6 +8,7 @@ import access
 import base
 import issue
 import sms
+import mail
 import network
 import contract
 import product
