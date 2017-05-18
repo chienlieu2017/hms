@@ -24,6 +24,8 @@ IT Management Module
     'data': [
         # ============================================================
         # SECURITY SETTING - GROUP - PROFILE
+        'view/base/web_template.xml',
+        'view/base/qweb.xml',
         # ============================================================
         # 'security/',
         'security/res_groups_data.xml',
@@ -69,8 +71,7 @@ IT Management Module
         'view/contract/partner_contract_view.xml',
         'view/product/product_template_view.xml',
         'view/product/product_category_view.xml',
-        'view/base/web_template.xml',
-        'view/base/qweb.xml',
+        
         # ============================================================
         # MENU
         # ============================================================
