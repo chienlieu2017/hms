@@ -20,6 +20,8 @@ IT Management Module
         '4leaf_base',
         'base',
         'web',
+        'im_livechat',
+        'mail',
     ],
     'data': [
         # ============================================================
