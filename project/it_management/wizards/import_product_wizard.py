@@ -40,6 +40,14 @@ class ImportProductWizard(models.Model):
         default="hardware",
         string="Device / Software ?")
 
+    def _is_number(self, number):
+        try:
+            int(number)
+        except ValueError:
+            return False
+        else:
+            return True
+
     @api.model
     def default_get(self, fs):
         res = super(ImportProductWizard, self).default_get(fs)
@@ -51,7 +59,10 @@ class ImportProductWizard(models.Model):
         return res
 
     def clear_str(self, val):
-        val = val.strip()
+        if self._is_number(val):
+            val = str(val)
+        elif isinstance(val, (str, unicode)):
+            val = val.strip()
         return val
 
     @api.multi
@@ -186,7 +197,8 @@ class ImportProductWizard(models.Model):
                 else:
                     # Create new one
                     u_vals = {'name': line['user_name'],
-                              'parent_id': self.company_id.id}
+                              'parent_id': self.company_id.id
+                              }
                     n_user = self.env['res.partner'].create(u_vals)
                     vals.update({'contact_partner_id': n_user.id})
                     # Update caches
