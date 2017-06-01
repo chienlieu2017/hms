@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+	<data>
+		<record model="ir.ui.view" id="view_product_software_tree">
+			<field name="name">product.software.tree</field>
+			<field name="model">product.software</field>
+			<field name="arch" type="xml">
+				<tree string="Product Software">
+					<field name="product_id" />
+					<field name="lisence_key" />
+					<field name="notes" />
+					<field name="expiration_date" />
+				</tree>
+			</field>
+		</record>
+
+		<record model="ir.ui.view" id="view_product_software_search">
+			<field name="name">product.software.search</field>
+			<field name="model">product.software</field>
+			<field name="arch" type="xml">
+				<search string="Product Software">
+					<field name="product_id" />
+					<field name="lisence_key" />
+				</search>
+			</field>
+		</record>
+
+	</data>
+</openerp>

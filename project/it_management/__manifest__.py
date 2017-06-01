@@ -49,7 +49,7 @@ IT Management Module
         # ============================================================
         'wizards/import_product_wizard_view.xml',
         'wizards/import_software_info_wizard_view.xml',
-
+        'wizards/import_software_wizard_view.xml',
         # REPORT
         # ============================================================
         # 'report/',
@@ -77,7 +77,7 @@ IT Management Module
         'view/contract/partner_contract_view.xml',
         'view/product/product_template_view.xml',
         'view/product/product_category_view.xml',
-        
+        'view/product/product_software_view.xml',
         # ============================================================
         # MENU
         # ============================================================

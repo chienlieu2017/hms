@@ -1,23 +1,9 @@
 # -*- coding: utf-8 -*-
 ##############################################################################
 #
-#    Copyright 2009-2016 Trobz (<http://trobz.com>).
-#
-#    This program is free software: you can redistribute it and/or modify
-#    it under the terms of the GNU Affero General Public License as
-#    published by the Free Software Foundation, either version 3 of the
-#    License, or (at your option) any later version.
-#
-#    This program is distributed in the hope that it will be useful,
-#    but WITHOUT ANY WARRANTY; without even the implied warranty of
-#    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-#    GNU Affero General Public License for more details.
-#
-#    You should have received a copy of the GNU Affero General Public License
-#    along with this program.  If not see <http://www.gnu.org/licenses/>.
+#    Copyright 2009-2017 4Leaf Team
 #
 ##############################################################################
-
 import base64
 import cStringIO
 import collections
@@ -179,14 +165,16 @@ class ImportSoftwareInfoWizard(models.Model):
         else:
             # Update software info for device
             Psoftware = self.env['product.software']
+            product_obj = self.env['product.product']
             for line in lines:
-                vals = {'product_template_id': refs[line['d_ref']],
+                product_id = product_obj.browse(refs[line['d_ref']])
+                vals = {'product_template_id': product_id.product_tmpl_id.id,
                         'product_id': refs[line['s_ref']],
                         'lisence_key': line['license'],
                         'expiration_date': line.get('expiration'),
                         'notes': line['note']
                         }
-                args = [('product_template_id', '=', refs[line['d_ref']]),
+                args = [('product_template_id', '=', product_id.product_tmpl_id.id),
                         ('product_id', '=', refs[line['s_ref']])]
                 exist = Psoftware.search(args, limit=1)
                 if exist:

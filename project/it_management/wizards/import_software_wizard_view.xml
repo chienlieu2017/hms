@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+        <record id="import_software_wizard" model="ir.ui.view">
+            <field name="name">Import Products</field>
+            <field name="model">import.software.wizard</field>
+            <field name="arch" type="xml">
+                <form string="Import Software Info">
+                	<div>
+                	</div>
+                	<group>
+                		<field name="software_ids">
+                			<tree>
+                				<field name="product_id"></field>
+                				<field name="lisence_key"></field>
+                			</tree>
+                		</field>
+                	</group>
+                	<group>
+                		<field name="product_ids">
+                		</field>
+                	</group>
+                	<footer>
+	                	<button string="Import" name="button_generate" class="oe_highlight" type="object" />
+						<button string="Cancel" class="oe_link" special="cancel" />
+					</footer>
+                </form>
+            </field>
+        </record>
+   		<record id="action_import_software" model="ir.actions.act_window">
+			<field name="name">Import Software Info</field>
+			<field name="type">ir.actions.act_window</field>
+			<field name="res_model">import.software.wizard</field>
+			<field name="view_mode">form</field>
+			<field name="target">new</field>
+		</record>
+
+		<menuitem id="menu_import_software" name="Import Software Wizard"
+			action="action_import_software"
+			parent="stock.menu_product_in_config_stock" sequence="101" />
+</odoo>
