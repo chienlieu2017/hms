@@ -18,4 +18,5 @@ class NetworkMap(models.Model):
                               default=lambda self: self.env.uid)
     owner_ids = fields.Many2many(
         'res.users', string='Owner')
-    partner_id = fields.Many2one('res.partner', 'Customer')
+    partner_id = fields.Many2one('res.partner', 'Customer', required=True,
+                                 domain=[('company_type', '=', 'company')])

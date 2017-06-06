@@ -17,3 +17,5 @@ class WebService(models.Model):
     panel = fields.Char('Panel', required=True)
     login = fields.Char('login', required=True)
     pwd = fields.Char('Password', required=True)
+    company_id = fields.Many2one('res.partner', 'Company', required=True,
+                                 domain=[('company_type', '=', 'company')])

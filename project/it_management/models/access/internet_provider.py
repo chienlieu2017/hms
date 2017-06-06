@@ -19,3 +19,5 @@ class InternetProvider(models.Model):
     connexion = fields.Char('Connexion')
     speed = fields.Char('Speed')
     connexion_type = fields.Char('Connexion Type')
+    company_id = fields.Many2one('res.partner', 'Company', required=True,
+                                 domain=[('company_type', '=', 'company')])

@@ -22,3 +22,5 @@ class AccessSystem(models.Model):
     type = fields.Selection([('server', 'Server'),
                              ('system', 'System')],
                             string="Type")
+    company_id = fields.Many2one('res.partner', 'Company', required=True,
+                                 domain=[('company_type', '=', 'company')])

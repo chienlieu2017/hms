@@ -6,6 +6,7 @@
 			<field name="model">internet.provider</field>
 			<field name="arch" type="xml">
 				<tree string="Internet Provider">
+					<field name="company_id" />
 					<field name="name" />
 					<field name="login" />
 					<field name="pwd" />
@@ -28,6 +29,7 @@
 								<field name="name" />
 								<field name="login" />
 								<field name="pwd" />
+								<field name="company_id" />
 							</group>
 							<group>
 								<field name="support_tel" />

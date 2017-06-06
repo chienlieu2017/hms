@@ -6,6 +6,7 @@
 			<field name="model">access.system</field>
 			<field name="arch" type="xml">
 				<tree string="Access System">
+					<field name="company_id" />
 					<field name="name" />
 					<field name="remote_info" />
 					<field name="local_ip" />
@@ -33,6 +34,7 @@
 							<group>
 								<field name="login" />
 								<field name="password" />
+								<field name="company_id" />
 							</group>
 						</group>
 						<separator string="Remark" />
@@ -47,6 +49,7 @@
 			<field name="model">access.system</field>
 			<field name="arch" type="xml">
 				<search string="Access System">
+					<field name="company_id" />
 					<field name="name" />
 					<field name="remote_info" />
 					<field name="local_ip" />

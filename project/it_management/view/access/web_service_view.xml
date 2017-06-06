@@ -7,6 +7,7 @@
 			<field name="model">web.service</field>
 			<field name="arch" type="xml">
 				<tree string="Web Service">
+					<field name="company_id" />
 					<field name="name" />
 					<field name="ip_addr" />
 					<field name="panel" />
@@ -24,6 +25,7 @@
 					<sheet>
 						<group>
 							<group>
+								<field name="company_id" />
 								<field name="name" />
 								<field name="ip_addr" />
 							</group>
@@ -43,6 +45,7 @@
 			<field name="model">web.service</field>
 			<field name="arch" type="xml">
 				<search string="Web Service">
+					<field name="company_id" />
 					<field name="name" />
 					<field name="ip_addr" />
 					<field name="panel" />
