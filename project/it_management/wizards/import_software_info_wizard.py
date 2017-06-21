@@ -19,7 +19,7 @@ from odoo.exceptions import UserError
 from odoo.tools import DEFAULT_SERVER_DATE_FORMAT as DF
 
 
-class ImportSoftwareInfoWizard(models.Model):
+class ImportSoftwareInfoWizard(models.TransientModel):
     _name = 'import.software.info.wizard'
 
     data_file = fields.Binary(

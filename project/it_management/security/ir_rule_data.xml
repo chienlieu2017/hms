@@ -20,7 +20,21 @@
 			<field name="name">IT User > Product</field>
 			<field ref="product.model_product_product" name="model_id" />
 			<field name="domain_force">["|",('partner_id','=', False),('partner_id', '=', user.partner_id.id)]</field>
-			<field name="groups" eval="[(4, ref('it_management.group_it_user_limit'))]" />
+			<field name="groups" eval="[(4, ref('it_management.group_it_user_limit')), (4, ref('base.group_user'))]" />
+		</record>
+
+		<record id="product_technical_rule" model="ir.rule">
+			<field name="name">Technical User > Product</field>
+			<field ref="product.model_product_template" name="model_id" />
+			<field name="domain_force">["|", "|", ('partner_id','=', False),('partner_id.supporter_id', '=', user.id), ('contact_partner_id.parent_id.supporter_id', '=', user.id)]</field>
+			<field name="groups" eval="[(4, ref('it_management.group_it_technical_limit')), (4, ref('it_management.group_it_technical'))]" />
+		</record>
+
+		<record id="product_supporter_rule" model="ir.rule">
+			<field name="name">Supporter User > Product</field>
+			<field ref="product.model_product_template" name="model_id" />
+			<field name="domain_force">[(1 ,'=', 1)]</field>
+			<field name="groups" eval="[(4, ref('it_management.group_it_supporter'))]" />
 		</record>
 
 		<record id="sms_technical_rule" model="ir.rule">
@@ -118,7 +132,7 @@
 		<record id="res_partner_user_rule" model="ir.rule">
 			<field name="name">IT User > Partner</field>
 			<field ref="base.model_res_partner" name="model_id" />
-			<field name="domain_force">[('id', 'in', [user.partner_id.id, user.partner_id.supporter_id.id])]</field>
+			<field name="domain_force">[('id', 'in', [user.partner_id.id, user.partner_id.supporter_id.partner_id.id])]</field>
 			<field name="groups" eval="[(4, ref('it_management.group_it_user_limit'))]" />
 		</record>
 

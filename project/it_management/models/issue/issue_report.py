@@ -4,7 +4,7 @@
 #    Copyright 2009-2017 4Leaf Team
 #
 ##############################################################################
-from datetime import timedelta, datetime
+from datetime import datetime
 from odoo import api, fields, models
 
 RP_ISSUE_STATES = [('draft', 'Draft'),
@@ -169,6 +169,12 @@ class IssueReport(models.Model):
                 mobiles.append(assignee.partner_id.mobile)
                 self._send_sms_message(res, mobiles, template_id=sms_tmpl.id)
         return res
+
+    @api.multi
+    def write(self, vals):
+        if vals.get('state', False) == 'confirm':
+            vals.update({'date_done': fields.Datetime.now()})
+        return super(IssueReport, self).write(vals)
 
     @api.onchange('partner_id')
     def onchange_partner_id(self):

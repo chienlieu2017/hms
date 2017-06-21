@@ -20,7 +20,7 @@ from odoo.exceptions import UserError
 from odoo.tools.translate import _
 
 
-class ImportProductWizard(models.Model):
+class ImportProductWizard(models.TransientModel):
     _name = 'import.product.wizard'
 
     data_file = fields.Binary(
