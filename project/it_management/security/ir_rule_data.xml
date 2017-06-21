@@ -41,7 +41,7 @@
 		<record id="network_map_support_rule" model="ir.rule">
 			<field name="name">Support User > Network Map</field>
 			<field ref="it_management.model_network_map" name="model_id" />
-			<field name="domain_force">[(1,'=',1))]</field>
+			<field name="domain_force">[(1,'=',1)]</field>
 			<field name="groups" eval="[(4, ref('it_management.group_it_supporter'))]" />
 		</record>
 
@@ -55,7 +55,7 @@
 		<record id="access_sytem_support_rule" model="ir.rule">
 			<field name="name">Support User > Access System</field>
 			<field ref="it_management.model_access_system" name="model_id" />
-			<field name="domain_force">[(1,'=',1))]</field>
+			<field name="domain_force">[(1,'=',1)]</field>
 			<field name="groups" eval="[(4, ref('it_management.group_it_supporter'))]" />
 		</record>
 
@@ -69,7 +69,7 @@
 		<record id="internet_provider_support_rule" model="ir.rule">
 			<field name="name">Support User > Internet Provider</field>
 			<field ref="it_management.model_internet_provider" name="model_id" />
-			<field name="domain_force">[(1,'=',1))]</field>
+			<field name="domain_force">[(1,'=',1)]</field>
 			<field name="groups" eval="[(4, ref('it_management.group_it_supporter'))]" />
 		</record>
 
@@ -83,7 +83,7 @@
 		<record id="web_service_support_rule" model="ir.rule">
 			<field name="name">Support User > Web Service</field>
 			<field ref="it_management.model_web_service" name="model_id" />
-			<field name="domain_force">[(1,'=',1))]</field>
+			<field name="domain_force">[(1,'=',1)]</field>
 			<field name="groups" eval="[(4, ref('it_management.group_it_supporter'))]" />
 		</record>
 
@@ -97,7 +97,7 @@
 		<record id="data_right_access_support_rule" model="ir.rule">
 			<field name="name">Support User > Data Right Access</field>
 			<field ref="it_management.model_data_right_access" name="model_id" />
-			<field name="domain_force">[(1,'=',1))]</field>
+			<field name="domain_force">[(1,'=',1)]</field>
 			<field name="groups" eval="[(4, ref('it_management.group_it_supporter'))]" />
 		</record>
 
@@ -111,7 +111,7 @@
 		<record id="ata_folder_access_support_rule" model="ir.rule">
 			<field name="name">Support User > Data Folder</field>
 			<field ref="it_management.model_data_folder" name="model_id" />
-			<field name="domain_force">[(1,'=',1))]</field>
+			<field name="domain_force">[(1,'=',1)]</field>
 			<field name="groups" eval="[(4, ref('it_management.group_it_supporter'))]" />
 		</record>
 
@@ -132,7 +132,7 @@
 		<record id="res_partner_access_support_rule" model="ir.rule">
 			<field name="name">Support User > Partner</field>
 			<field ref="base.model_res_partner" name="model_id" />
-			<field name="domain_force">[(1,'=',1))]</field>
+			<field name="domain_force">[(1,'=',1)]</field>
 			<field name="groups" eval="[(4, ref('it_management.group_it_supporter'))]" />
 		</record>
 
